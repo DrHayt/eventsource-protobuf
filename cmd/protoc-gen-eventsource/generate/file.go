@@ -2,7 +2,6 @@ package generate
 
 import (
 	"bytes"
-
 	"strings"
 
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
@@ -24,8 +23,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/altairsix/eventsource"
-	"github.com/gogo/protobuf/proto"
+	"github.com/vancelongwill/eventsource"
+	"google.golang.org/protobuf/proto"
 )
 
 type serializer struct {
