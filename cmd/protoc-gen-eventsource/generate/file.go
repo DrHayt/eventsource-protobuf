@@ -198,8 +198,9 @@ func (b *Builder) {{ .Name | camel }}({{ range .Field | other }}{{ .Name | camel
 		{{ id .Name $Events }}:      b.id,
 		Version: b.nextVersion(),
 		At:      time.Now().Unix(),
-{{ range .Field | other }}	{{ . | name }}: {{ . | name | lower }},
-{{ end }}
+{{- range .Field | other }}
+		{{ . | name }}: {{ . | name | lower }},
+{{- end }}
 	}
 	b.Events = append(b.Events, event)
 }
