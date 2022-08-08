@@ -2,7 +2,6 @@ package generate
 
 import (
 	"bytes"
-
 	"strings"
 
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
@@ -15,13 +14,13 @@ const (
 // source: {{ .Source }}
 
 package {{ .Package }}
-{{ range .Commands }}
+{{- range .Commands }}
 
 // AggregateID implements the eventsource.Command interface for {{ .Name }}
 func (c *{{ .Name }}) AggregateID() string {
 	return c.{{ id . }}
 }
-{{ end }}
+{{- end }}
 `
 )
 

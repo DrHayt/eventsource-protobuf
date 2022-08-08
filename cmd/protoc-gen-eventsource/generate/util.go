@@ -24,10 +24,10 @@ func filename(in *descriptor.FileDescriptorProto) *string {
 		name := *in.Name
 		ext := filepath.Ext(name)
 		name = name[0 : len(name)-len(ext)]
-		return String(name + ".pb.es.go")
+		return String(name + ".es.pb.go")
 	}
 
-	return String("events.pb.es.go")
+	return String("events.es.pb.go")
 }
 
 func packageName(in *descriptor.FileDescriptorProto) (string, error) {
