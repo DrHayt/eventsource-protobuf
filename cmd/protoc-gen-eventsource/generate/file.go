@@ -77,7 +77,7 @@ func MarshalEvent(event eventsource.Event) ([]byte, error) {
 }
 
 func UnmarshalEvent(data []byte) (eventsource.Event, error) {
-	container := &{{ .Message.Name | base | camel }}{};
+	container := &{{ .Message.Name | base | camel }}{}
 	err := proto.Unmarshal(data, container)
 	if err != nil {
 		return nil, err
@@ -96,7 +96,7 @@ func UnmarshalEvent(data []byte) (eventsource.Event, error) {
 	return event.(eventsource.Event), nil
 }
 
-type Encoder struct{
+type Encoder struct {
 	w io.Writer
 }
 
@@ -168,7 +168,7 @@ func (d *Decoder) ReadEvent() (eventsource.Event, error) {
 }
 
 func NewDecoder(r io.Reader) *Decoder {
-	return &Decoder {
+	return &Decoder{
 		r:       bufio.NewReader(r),
 		scratch: bytes.NewBuffer(nil),
 	}
